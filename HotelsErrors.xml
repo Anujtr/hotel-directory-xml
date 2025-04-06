@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Hotel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="Hotels.xsd">
+  <!-- ❌ ERROR 1: Root element name is "Hotel" instead of "Hotels" -->
+
+  <!-- Hotel with all correct data -->
+  <Hotel Rating="4.2">
+    <Name>Westin</Name>
+    <Phone>480-968-8885</Phone>
+    <Phone>800-937-8461</Phone>
+    <Address NearstAirport="Sky Harbor">
+      <Number>11</Number>
+      <Street>E.7th St</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+    </Address>
+  </Hotel>
+
+  <!-- ❌ ERROR 2: Missing required attribute NearstAirport -->
+  <Hotel Rating="4.6">
+    <Name>Marriott Marquis</Name>
+    <Phone>602-333-0000</Phone>
+    <Phone>888-236-2427</Phone>
+    <Address>
+      <Number>340</Number>
+      <Street>N 3rd St</Street>
+      <City>Phoenix</City>
+      <State>AZ</State>
+      <Zip>85004</Zip>
+    </Address>
+  </Hotel>
+
+  <!-- ❌ ERROR 3: Missing Phone element -->
+  <Hotel>
+    <Name>Hilton Garden Inn</Name>
+    <Address NearstAirport="Phoenix Mesa Gateway">
+      <Number>86</Number>
+      <Street>S Rockford Dr</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+    </Address>
+  </Hotel>
+
+  <!-- ❌ ERROR 4: Address tag is not closed -->
+  <Hotel Rating="4.1">
+    <Name>Hyatt Place</Name>
+    <Phone>480-804-9544</Phone>
+    <Phone>877-803-7534</Phone>
+    <Address NearstAirport="Phoenix Sky Harbor">
+      <Number>1413</Number>
+      <Street>W Rio Salado Pkwy</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+    <!-- Missing </Address> tag -->
+  </Hotel>
+
+  <!-- ❌ ERROR 5: Two <Name> elements -->
+  <Hotel>
+    <Name>Aloft Tempe</Name>
+    <Name>Second Name Shouldn't Exist</Name>
+    <Phone>480-621-3300</Phone>
+    <Address NearstAirport="Sky Harbor">
+      <Number>951</Number>
+      <Street>E Playa del Norte Dr</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+    </Address>
+  </Hotel>
+
+</Hotel>
