@@ -81,12 +81,35 @@ namespace ConsoleApp1
                 using (WebClient client = new WebClient())
                 {
                     string xmlContent = client.DownloadString(xmlUrl);
-
+                    string xsdContent = client.DownloadString(Program.xsdURL);
+        
+                    // First validate XML against schema
+                    XmlReaderSettings settings = new XmlReaderSettings();
+                    settings.ValidationType = ValidationType.Schema;
+                    XmlSchemaSet schemaSet = new XmlSchemaSet();
+                    using (StringReader xsdReader = new StringReader(xsdContent))
+                    {
+                        schemaSet.Add(null, XmlReader.Create(xsdReader));
+                    }
+                    settings.Schemas = schemaSet;
+        
+                    string errorMessage = null;
+                    settings.ValidationEventHandler += (sender, e) => { errorMessage = e.Message; };
+        
+                    using (StringReader sr = new StringReader(xmlContent))
+                    using (XmlReader reader = XmlReader.Create(sr, settings))
+                    {
+                        while (reader.Read()) { }
+                    }
+        
+                    if (errorMessage != null)
+                        return "Conversion Error: " + errorMessage;
+        
+                    // Then convert to JSON
                     XmlDocument xmlDoc = new XmlDocument();
                     xmlDoc.LoadXml(xmlContent);
-
+        
                     string jsonText = JsonConvert.SerializeXmlNode(xmlDoc, Newtonsoft.Json.Formatting.Indented, true);
-
                     return jsonText;
                 }
             }
