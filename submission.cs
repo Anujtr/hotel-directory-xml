@@ -9,7 +9,6 @@ namespace ConsoleApp1
 {
     public class Program
     {
-        // Replace these URLs with your actual raw GitHub file links
         public static string xmlURL = "https://github.com/Anujtr/hotel-directory-xml/raw/refs/heads/main/Hotels.xml";
         public static string xmlErrorURL = "https://github.com/Anujtr/hotel-directory-xml/raw/refs/heads/main/HotelsErrors.xml";
         public static string xsdURL = "https://github.com/Anujtr/hotel-directory-xml/raw/refs/heads/main/Hotels.xsd";
