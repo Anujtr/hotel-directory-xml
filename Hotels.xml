@@ -116,7 +116,7 @@
   </Hotel>
 
   <Hotel>
-    <Name>Drury Inn & Suites</Name>
+    <Name>Drury Inn &amp; Suites</Name>
     <Phone>480-940-3700</Phone>
     <Address NearestAirport="Phoenix Mesa Gateway">
       <Number>3333</Number>
