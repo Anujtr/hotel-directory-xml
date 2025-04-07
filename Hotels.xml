@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Root element defining the XML namespace and schema location -->
 <Hotels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="Hotels.xsd">
-
+  
+  <!-- Hotel entry 1 -->
   <Hotel Rating="4.2">
+    <!-- Hotel name -->
     <Name>Westin</Name>
+    <!-- Hotel phone numbers -->
     <Phone>480-968-8885</Phone>
     <Phone>800-937-8461</Phone>
+    <!-- Hotel address -->
     <Address NearstAirport="Sky Harbor">
       <Number>11</Number>
       <Street>E.7th St</Street>
@@ -15,6 +20,7 @@
     </Address>
   </Hotel>
 
+  <!-- Hotel entry 2 -->
   <Hotel Rating="4.6">
     <Name>Marriott Marquis</Name>
     <Phone>602-333-0000</Phone>
@@ -28,6 +34,7 @@
     </Address>
   </Hotel>
 
+  <!-- Hotel entry 3 -->
   <Hotel>
     <Name>Hilton Garden Inn</Name>
     <Phone>480-968-2180</Phone>
@@ -40,6 +47,7 @@
     </Address>
   </Hotel>
 
+  <!-- Hotel entry 4 -->
   <Hotel Rating="4.1">
     <Name>Hyatt Place</Name>
     <Phone>480-804-9544</Phone>
@@ -53,6 +61,7 @@
     </Address>
   </Hotel>
 
+  <!-- Hotel entry 5 -->
   <Hotel>
     <Name>Aloft Tempe</Name>
     <Phone>480-621-3300</Phone>
@@ -65,6 +74,7 @@
     </Address>
   </Hotel>
 
+  <!-- Hotel entry 6 -->
   <Hotel Rating="4.8">
     <Name>Four Seasons Resort</Name>
     <Phone>480-515-5700</Phone>
@@ -77,6 +87,7 @@
     </Address>
   </Hotel>
 
+  <!-- Hotel entry 7 -->
   <Hotel Rating="4.0">
     <Name>Kimpton Hotel Palomar</Name>
     <Phone>480-478-9611</Phone>
@@ -89,6 +100,7 @@
     </Address>
   </Hotel>
 
+  <!-- Hotel entry 8 -->
   <Hotel>
     <Name>Courtyard by Marriott</Name>
     <Phone>480-966-2800</Phone>
@@ -102,6 +114,7 @@
     </Address>
   </Hotel>
 
+  <!-- Hotel entry 9 -->
   <Hotel Rating="3.9">
     <Name>Motel 6 Tempe</Name>
     <Phone>480-736-0185</Phone>
@@ -114,6 +127,7 @@
     </Address>
   </Hotel>
 
+  <!-- Hotel entry 10 -->
   <Hotel>
     <Name>Drury Inn &amp; Suites</Name>
     <Phone>480-940-3700</Phone>
@@ -126,6 +140,7 @@
     </Address>
   </Hotel>
 
+  <!-- Hotel entry 11 -->
   <Hotel Rating="4.3">
     <Name>Omni Tempe Hotel</Name>
     <Phone>480-245-7400</Phone>
