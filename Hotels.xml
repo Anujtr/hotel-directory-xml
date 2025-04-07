@@ -6,7 +6,7 @@
     <Name>Westin</Name>
     <Phone>480-968-8885</Phone>
     <Phone>800-937-8461</Phone>
-    <Address NearestAirport="Sky Harbor">
+    <Address NearstAirport="Sky Harbor">
       <Number>11</Number>
       <Street>E.7th St</Street>
       <City>Tempe</City>
@@ -19,7 +19,7 @@
     <Name>Marriott Marquis</Name>
     <Phone>602-333-0000</Phone>
     <Phone>888-236-2427</Phone>
-    <Address NearestAirport="Phoenix Sky Harbor">
+    <Address NearstAirport="Phoenix Sky Harbor">
       <Number>340</Number>
       <Street>N 3rd St</Street>
       <City>Phoenix</City>
@@ -31,7 +31,7 @@
   <Hotel>
     <Name>Hilton Garden Inn</Name>
     <Phone>480-968-2180</Phone>
-    <Address NearestAirport="Phoenix Mesa Gateway">
+    <Address NearstAirport="Phoenix Mesa Gateway">
       <Number>86</Number>
       <Street>S Rockford Dr</Street>
       <City>Tempe</City>
@@ -44,7 +44,7 @@
     <Name>Hyatt Place</Name>
     <Phone>480-804-9544</Phone>
     <Phone>877-803-7534</Phone>
-    <Address NearestAirport="Phoenix Sky Harbor">
+    <Address NearstAirport="Phoenix Sky Harbor">
       <Number>1413</Number>
       <Street>W Rio Salado Pkwy</Street>
       <City>Tempe</City>
@@ -56,7 +56,7 @@
   <Hotel>
     <Name>Aloft Tempe</Name>
     <Phone>480-621-3300</Phone>
-    <Address NearestAirport="Sky Harbor">
+    <Address NearstAirport="Sky Harbor">
       <Number>951</Number>
       <Street>E Playa del Norte Dr</Street>
       <City>Tempe</City>
@@ -68,7 +68,7 @@
   <Hotel Rating="4.8">
     <Name>Four Seasons Resort</Name>
     <Phone>480-515-5700</Phone>
-    <Address NearestAirport="Scottsdale Airport">
+    <Address NearstAirport="Scottsdale Airport">
       <Number>10600</Number>
       <Street>E Crescent Moon Dr</Street>
       <City>Scottsdale</City>
@@ -80,7 +80,7 @@
   <Hotel Rating="4.0">
     <Name>Kimpton Hotel Palomar</Name>
     <Phone>480-478-9611</Phone>
-    <Address NearestAirport="Phoenix Sky Harbor">
+    <Address NearstAirport="Phoenix Sky Harbor">
       <Number>2</Number>
       <Street>E Jefferson St</Street>
       <City>Phoenix</City>
@@ -93,7 +93,7 @@
     <Name>Courtyard by Marriott</Name>
     <Phone>480-966-2800</Phone>
     <Phone>888-236-2427</Phone>
-    <Address NearestAirport="Sky Harbor">
+    <Address NearstAirport="Sky Harbor">
       <Number>601</Number>
       <Street>S Ash Ave</Street>
       <City>Tempe</City>
@@ -105,7 +105,7 @@
   <Hotel Rating="3.9">
     <Name>Motel 6 Tempe</Name>
     <Phone>480-736-0185</Phone>
-    <Address NearestAirport="Phoenix Sky Harbor">
+    <Address NearstAirport="Phoenix Sky Harbor">
       <Number>1915</Number>
       <Street>E Apache Blvd</Street>
       <City>Tempe</City>
@@ -117,7 +117,7 @@
   <Hotel>
     <Name>Drury Inn &amp; Suites</Name>
     <Phone>480-940-3700</Phone>
-    <Address NearestAirport="Phoenix Mesa Gateway">
+    <Address NearstAirport="Phoenix Mesa Gateway">
       <Number>3333</Number>
       <Street>E University Dr</Street>
       <City>Phoenix</City>
@@ -129,7 +129,7 @@
   <Hotel Rating="4.3">
     <Name>Omni Tempe Hotel</Name>
     <Phone>480-245-7400</Phone>
-    <Address NearestAirport="Sky Harbor">
+    <Address NearstAirport="Sky Harbor">
       <Number>7</Number>
       <Street>E University Dr</Street>
       <City>Tempe</City>
