@@ -1,9 +1,9 @@
 using System;
-using System.Xml;
 using System.Xml.Schema;
+using System.Xml;
 using Newtonsoft.Json;
-using System.Net;
 using System.IO;
+using System.Net;
 
 namespace ConsoleApp1
 {
@@ -25,47 +25,41 @@ namespace ConsoleApp1
             Console.WriteLine(result);
         }
 
-        // Q2.1
         public static string Verification(string xmlUrl, string xsdUrl)
         {
             try
             {
-                XmlReaderSettings settings = new XmlReaderSettings();
-                settings.ValidationType = ValidationType.Schema;
-
-                // Load schema from URL
-                XmlSchemaSet schemaSet = new XmlSchemaSet();
+                XmlSchemaSet schemas = new XmlSchemaSet();
                 using (WebClient client = new WebClient())
                 {
                     string xsdContent = client.DownloadString(xsdUrl);
                     using (StringReader sr = new StringReader(xsdContent))
                     {
-                        schemaSet.Add(null, XmlReader.Create(sr));
+                        schemas.Add(null, XmlReader.Create(sr));
                     }
                 }
 
-                settings.Schemas = schemaSet;
+                XmlReaderSettings settings = new XmlReaderSettings();
+                settings.Schemas = schemas;
+                settings.ValidationType = ValidationType.Schema;
 
-                string errorMessage = "No Error";
+                string validationError = "No Error";
                 settings.ValidationEventHandler += (sender, e) =>
                 {
-                    errorMessage = e.Message;
+                    validationError = e.Message;
                 };
 
-                // Load XML from URL
                 using (WebClient client = new WebClient())
                 {
                     string xmlContent = client.DownloadString(xmlUrl);
                     using (StringReader sr = new StringReader(xmlContent))
+                    using (XmlReader reader = XmlReader.Create(sr, settings))
                     {
-                        using (XmlReader reader = XmlReader.Create(sr, settings))
-                        {
-                            while (reader.Read()) { }
-                        }
+                        while (reader.Read()) { }
                     }
                 }
 
-                return errorMessage;
+                return validationError;
             }
             catch (Exception ex)
             {
@@ -73,7 +67,6 @@ namespace ConsoleApp1
             }
         }
 
-        // Q2.2
         public static string Xml2Json(string xmlUrl)
         {
             try
@@ -81,36 +74,14 @@ namespace ConsoleApp1
                 using (WebClient client = new WebClient())
                 {
                     string xmlContent = client.DownloadString(xmlUrl);
-                    string xsdContent = client.DownloadString(Program.xsdURL);
-        
-                    // First validate XML against schema
-                    XmlReaderSettings settings = new XmlReaderSettings();
-                    settings.ValidationType = ValidationType.Schema;
-                    XmlSchemaSet schemaSet = new XmlSchemaSet();
-                    using (StringReader xsdReader = new StringReader(xsdContent))
-                    {
-                        schemaSet.Add(null, XmlReader.Create(xsdReader));
-                    }
-                    settings.Schemas = schemaSet;
-        
-                    string errorMessage = null;
-                    settings.ValidationEventHandler += (sender, e) => { errorMessage = e.Message; };
-        
-                    using (StringReader sr = new StringReader(xmlContent))
-                    using (XmlReader reader = XmlReader.Create(sr, settings))
-                    {
-                        while (reader.Read()) { }
-                    }
-        
-                    if (errorMessage != null)
-                        return "Conversion Error: " + errorMessage;
-        
-                    // Then convert to JSON
-                    XmlDocument xmlDoc = new XmlDocument();
-                    xmlDoc.LoadXml(xmlContent);
-        
-                    string jsonText = JsonConvert.SerializeXmlNode(xmlDoc, Newtonsoft.Json.Formatting.Indented, true);
-                    return jsonText;
+                    XmlDocument doc = new XmlDocument();
+                    doc.LoadXml(xmlContent);
+
+                    string json = JsonConvert.SerializeXmlNode(doc);
+                    // Test if it is deserializable
+                    var test = JsonConvert.DeserializeXmlNode(json);
+
+                    return json;
                 }
             }
             catch (Exception ex)
