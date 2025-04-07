@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Hotel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:noNamespaceSchemaLocation="Hotels.xsd">
-  <!-- ❌ ERROR 1: Root element name is "Hotel" instead of "Hotels" -->
+<Hotels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="Hotels.xsd">
 
   <!-- Hotel with all correct data -->
   <Hotel Rating="4.2">
@@ -43,7 +42,7 @@
     </Address>
   </Hotel>
 
-  <!-- ❌ ERROR 4: Address tag is not closed -->
+  <!-- ❌ ERROR 4: Address tag was not closed -->
   <Hotel Rating="4.1">
     <Name>Hyatt Place</Name>
     <Phone>480-804-9544</Phone>
@@ -54,7 +53,7 @@
       <City>Tempe</City>
       <State>AZ</State>
       <Zip>85281</Zip>
-    <!-- Missing </Address> tag -->
+    </Address>
   </Hotel>
 
   <!-- ❌ ERROR 5: Two <Name> elements -->
@@ -71,4 +70,4 @@
     </Address>
   </Hotel>
 
-</Hotel>
+</Hotels>
